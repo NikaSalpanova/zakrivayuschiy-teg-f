@@ -121,7 +121,7 @@
 }
 
 .filter-multy {
-  filter: brightness(120%) contrast(60%) hue-rotate(90deg);
+  filter: brightness(250%) contrast(60%);
 }
 
 .card-decor {
