@@ -1,4 +1,2 @@
-
-Не забудьте установить зависимости `npm i` 
-
-Основные команды описаны в `package.json`
+https://github.com/NikaSalpanova/zakrivayuschiy-teg-f
+https://nikasalpanova.github.io/zakrivayuschiy-teg-f/
