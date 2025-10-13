@@ -24,7 +24,7 @@
 
 .header {
   margin: 0 auto;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   text-transform: uppercase;
   background-color: var(--background-color);
   inline-size: var(--inline-size);
@@ -71,7 +71,7 @@
 .card__title {
   font-family: var(--main-font), sans-serif;
   font-size: var(--main-font-size);
-  font-variation-settings: 'wght' 715, 'wdth' 100, 'opsz' 0;
+  font-variation-settings: 'wght' 715, 'wdth' 0, 'opsz' 0;
   padding: 4px 10px;
   border-block-end: var(--border);
 }
@@ -80,7 +80,6 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1/1;
-  max-block-size: 700px;
   overflow: hidden;
 }
 
@@ -92,7 +91,7 @@
 
 .image {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
 }
@@ -134,9 +133,10 @@
   font-size: 14px;
   text-transform: uppercase;
   mix-blend-mode: hard-light;
-  color: rgba(0 0 0 / 0.5);
+  color: var(--font-color);
   text-shadow: 1px 0 0 var(--text-stroke), -1px 0 0 var(--text-stroke),
     0 1px 0 var(--text-stroke), 0 -1px 0 var(--text-stroke);
+  opacity: 0.5;
   z-index: 2;
 }
 
@@ -169,11 +169,11 @@
   display: flex;
   align-self: flex-end;
   justify-self: center;
+  gap: 4px;
+  max-block-size: 38px;
 }
 
 .card__icon-button {
-  display: flex;
-  max-block-size: 38px;
   background: none;
   cursor: pointer;
   border: 2px solid transparent;
@@ -198,7 +198,6 @@
 .button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 #000;
-  transition: box-shadow 0.3s ease;
 }
 
 .button:after {
@@ -212,7 +211,6 @@
 
 .button:hover::after {
   translate: 0% 0%;
-  transition: translate 0.5s ease-in-out;
 }
 
 .card__icon-button:focus {
@@ -221,7 +219,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid #000;
-  transition: border 0.3s ease;
 }
 
 .contour {
@@ -238,10 +235,6 @@
 
 .main-body {
   transition: fill 0.3s 0 linear;
-}
-
-.like-icon {
-  align-self: center;
 }
 
 .like-icon:hover .core {
@@ -280,12 +273,12 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: heart 0.3s 0.1s ease-in backwards;
+  animation: heart 0.3s 0.1s ease-in;
   transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks 0.3s 0.3s ease-in backwards;
+  animation: sparks 0.3s 0.3s ease-in;
 }
 
 .card__like-button {
@@ -294,8 +287,8 @@
   align-items: center;
   font-size: 14px;
   cursor: pointer;
-  min-block-size: 38px;
-  min-inline-size: 130px;
+  padding: 11px 35px;
+  max-inline-size: 130px;
 }
 
 .button__text {
@@ -312,7 +305,7 @@
 .save-button {
   display: flex;
   align-items: center;
-  padding: 12px 18px;
+  padding: 14px 18px;
   gap: 8px;
   cursor: pointer;
 }
@@ -326,15 +319,15 @@
 
 .dialog {
   display: none;
+  position: fixed;
+  inset: 0;
   border: var(--border);
   inline-size: clamp(341px, 336.77px + 1.13vw, 353px);
-  min-block-size: 191px;
   padding: 30px;
 }
 
 .dialog[open] {
   display: block;
-  margin-block-end: 365px;
 }
 
 .dialog[open]::backdrop {
@@ -369,6 +362,10 @@
   margin-block-start: 30px;
 }
 
+.button__text-dialog {
+  text-transform: uppercase;
+}
+
 @media (width <= 375px) {
   .header {
     --margin-block-start: 100px;
@@ -389,9 +386,5 @@
 
   .save-button__svg-container {
     width: 28px;
-  }
-
-  .dialog[open] {
-    margin-block-end: 240px;
   }
 }

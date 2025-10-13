@@ -7,9 +7,21 @@
   --font-color-button: #fff;
   --card-header-font-weight: 715;
   --card-text-font-weight: 410;
-  --background-gragient: repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
-  repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), 
-  linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
+  --background-gragient: repeating-linear-gradient(
+      to right,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
   --background-color: #fff;
   --background-color-button: #000;
   --inline-size: clamp(375px, 260.56px + 30.52vw, 700px);
@@ -17,7 +29,7 @@
   --margin-block-start: 98px;
   --margin-block-end: 96px;
   --main-font-size: 18px;
-  --text-stroke: rgba(255 255 255 / 0.5);
+  --text-stroke: #fff;
   --contour-color: #000;
   --animation-fill-color: red;
   --sparks: var(--animation-fill-color);
