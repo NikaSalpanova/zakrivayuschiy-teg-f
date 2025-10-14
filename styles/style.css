@@ -10,8 +10,8 @@
 */
 
 .page {
-  font-family: var(--main-font), Inter, sans-serif;
-  font-variation-settings: 'wght' 410, 'wdth' 100, 'opsz' 0;
+  font-family: var(--main-font), Inter-Variable, sans-serif;
+  font-variation-settings: 'wght' var(--wght), 'wdth' var(--wdth), 'opsz' 0;
   color: var(--font-color);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -69,9 +69,10 @@
 }
 
 .card__title {
-  font-family: var(--main-font), sans-serif;
+  --wght: 715;
+  font-family: var(--main-font), Inter-Variable, sans-serif;
+  font-variation-settings: 'wght' var(--wght);
   font-size: var(--main-font-size);
-  font-variation-settings: 'wght' 715, 'wdth' 0, 'opsz' 0;
   padding: 4px 10px;
   border-block-end: var(--border);
 }
@@ -170,7 +171,6 @@
   align-self: flex-end;
   justify-self: center;
   gap: 4px;
-  max-block-size: 38px;
 }
 
 .card__icon-button {
@@ -178,6 +178,17 @@
   cursor: pointer;
   border: 2px solid transparent;
   transition: border 0.3s ease;
+  max-block-size: 38px;
+}
+
+.card__like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  min-block-size: 38px;
+  min-inline-size: 130px;
 }
 
 .button {
@@ -279,16 +290,6 @@
 
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s 0.3s ease-in;
-}
-
-.card__like-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 11px 35px;
-  max-inline-size: 130px;
 }
 
 .button__text {
